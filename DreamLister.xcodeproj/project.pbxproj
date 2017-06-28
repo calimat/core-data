@@ -22,6 +22,7 @@
 		F6DAD9911F033F47000BFC51 /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAD9891F033F47000BFC51 /* ItemType+CoreDataProperties.swift */; };
 		F6DAD9951F0345E6000BFC51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6DAD9941F0345E6000BFC51 /* Images.xcassets */; };
 		F6DAD9981F03466F000BFC51 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAD9971F03466F000BFC51 /* MaterialView.swift */; };
+		F6DAD99A1F034901000BFC51 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAD9991F034901000BFC51 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F6DAD9891F033F47000BFC51 /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F6DAD9941F0345E6000BFC51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F6DAD9971F03466F000BFC51 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		F6DAD9991F034901000BFC51 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F6DAD9971F03466F000BFC51 /* MaterialView.swift */,
+				F6DAD9991F034901000BFC51 /* ItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6DAD99A1F034901000BFC51 /* ItemCell.swift in Sources */,
 				F6DAD98B1F033F47000BFC51 /* Store+CoreDataProperties.swift in Sources */,
 				F6DAD90E1F01E792000BFC51 /* MainVC.swift in Sources */,
 				F6DAD9901F033F47000BFC51 /* ItemType+CoreDataClass.swift in Sources */,
