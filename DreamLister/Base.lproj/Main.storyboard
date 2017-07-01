@@ -150,7 +150,7 @@
         <!--Add/Edit-->
         <scene sceneID="kbU-C5-0It">
             <objects>
-                <viewController id="D6T-8J-TuX" sceneMemberID="viewController">
+                <viewController id="D6T-8J-TuX" customClass="itemDetailsVC" customModule="DreamLister" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CHf-cQ-Tcm"/>
                         <viewControllerLayoutGuide type="bottom" id="nbT-X5-9f0"/>
@@ -274,6 +274,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOU-nd-QJG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
