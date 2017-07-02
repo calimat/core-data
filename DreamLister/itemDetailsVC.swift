@@ -21,6 +21,7 @@ class itemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
     @IBOutlet weak var thumbImg: UIImageView!
     
     var stores = [Store]()
+    var itemTypes = [ItemType]()
     var itemToEdit: Item?
     var imagePicker: UIImagePickerController!
     
@@ -58,7 +59,23 @@ class itemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         ad.saveContext()
  */
         
-        getStores() 
+        /*
+        
+        let itemType = ItemType(context: context)
+        itemType.type = "Electronics"
+        let itemType2 = ItemType(context: context)
+        itemType2.type = "Furniture"
+        let itemType3 = ItemType(context: context)
+        itemType3.type = "Aparrell"
+        let itemType4 = ItemType(context: context)
+        itemType4.type = "Cars"
+        
+        ad.saveContext()
+ 
+ */
+        
+        getStores()
+        getItemTypes()
         
         if itemToEdit != nil {
             
@@ -70,18 +87,34 @@ class itemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        let store = stores[row]
-        return store.name
+        
+        switch component {
+        case 0:
+            let store = stores[row]
+            return store.name
+        case 1:
+            let itemtype = itemTypes[row]
+            return itemtype.type
+        default:
+            return ""
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return stores.count
+        switch(component) {
+        case 0:
+            return stores.count
+        case 1:
+            return itemTypes.count
+        default:
+            return 0
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
-        return 1
+        return 2
         
     }
     
@@ -102,6 +135,18 @@ class itemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             
             //handle the error
             
+        }
+    }
+    
+    func getItemTypes() {
+        let fetchRequest: NSFetchRequest<ItemType> = ItemType.fetchRequest()
+        
+        do {
+            self.itemTypes = try context.fetch(fetchRequest)
+            self.storePicker.reloadAllComponents()
+        }
+        catch {
+            //handle error
         }
     }
     
@@ -138,6 +183,7 @@ class itemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
         
         item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+        item.toItemType = itemTypes[storePicker.selectedRow(inComponent: 1)]
         
         ad.saveContext()
         
@@ -172,6 +218,25 @@ class itemDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                     
                 } while (index < stores.count)
             }
+            
+            if let itemType = item.toItemType {
+                
+                var index = 0
+                repeat {
+                    
+                    let it = itemTypes[index]
+                    if it.type == itemType.type {
+                        
+                        storePicker.selectRow(index, inComponent: 1, animated: false)
+                        break
+                    }
+                    
+                    index += 1
+                } while( index < itemTypes.count)
+                
+            }
+            
+            
         }
         
     }
